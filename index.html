@@ -8,123 +8,133 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
+      /* Brand (PZŁS) */
+      --red:#E32428;
+      --gold:#BF8224;
+      --navy:#191C2F;
+
+      /* Dark PRO look */
       --bg:#0b0f14;
+      --text:#eaf0ff;
+      --muted:#a9b4c8;
       --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.08);
-      --text:#e8edf5;
-      --muted:#aab6c6;
-      --red:#E32428;   /* PZŁS */
-      --gold:#BF8224;  /* PZŁS */
       --border: rgba(255,255,255,.12);
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --shadow: 0 24px 70px rgba(0,0,0,.45);
       --radius: 18px;
     }
+
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
       font-family: "Jost", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 10% 10%, rgba(227,36,40,.22), transparent 55%),
-        radial-gradient(900px 500px at 90% 15%, rgba(191,130,36,.18), transparent 55%),
-        radial-gradient(700px 420px at 40% 90%, rgba(227,36,40,.12), transparent 60%),
+        radial-gradient(900px 520px at 10% 10%, rgba(227,36,40,.24), transparent 55%),
+        radial-gradient(900px 520px at 90% 14%, rgba(191,130,36,.18), transparent 58%),
+        radial-gradient(700px 480px at 40% 95%, rgba(25,28,47,.45), transparent 60%),
         var(--bg);
       min-height:100vh;
     }
-    a{color:var(--text); text-decoration:none}
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 28px 18px 64px;
-    }
-    header{
+
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 64px}
+    .hero{
       border:1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
       border-radius: var(--radius);
-      padding: 26px 22px;
+      padding: 24px 22px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
+
     .brand{
-      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      flex-wrap:wrap;
     }
-    .dot{
-      width:14px; height:14px; border-radius:999px;
+    .mark{
+      width:14px;height:14px;border-radius:999px;
       background: linear-gradient(135deg, var(--red), var(--gold));
       box-shadow: 0 0 0 6px rgba(227,36,40,.12);
+      margin-top:7px;
+      flex:0 0 auto;
     }
-    h1{
-      margin:0;
-      font-size: 26px;
-      letter-spacing: .2px;
-    }
-    .sub{
-      margin:6px 0 0;
-      color:var(--muted);
-      line-height:1.5;
-      font-size: 15px;
-    }
-    nav{
-      margin-top: 18px;
-      display:flex; gap:10px; flex-wrap:wrap;
-    }
-    .chip{
+    h1{margin:0;font-size:28px;letter-spacing:.2px;line-height:1.15}
+    .sub{margin:8px 0 0;color:var(--muted);line-height:1.55;font-size:15px}
+    .badge{
+      display:inline-block;
+      margin-top:10px;
+      padding:6px 10px;
+      border-radius:999px;
       border:1px solid var(--border);
       background: rgba(255,255,255,.04);
-      padding:8px 10px;
-      border-radius: 999px;
-      font-size: 13px;
       color: var(--muted);
+      font-size: 13px;
     }
+
+    .nav{
+      margin-top: 16px;
+      display:flex;gap:10px;flex-wrap:wrap;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      text-decoration:none;
+      color: var(--muted);
+      font-size: 13px;
+      transition: transform .12s ease, background .12s ease;
+    }
+    .chip:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); color: var(--text);}
+
     .grid{
+      margin-top: 16px;
       display:grid;
       grid-template-columns: 1fr;
       gap:14px;
-      margin-top: 18px;
     }
     .card{
       border:1px solid var(--border);
       background: var(--card);
       border-radius: var(--radius);
       padding: 18px 18px;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
-    .card h2{
-      margin:0 0 8px;
-      font-size: 18px;
-    }
-    .card p, .card li{
+    .card h2{margin:0 0 10px;font-size:18px}
+    .card p,.card li{margin:0;color:var(--muted);line-height:1.7;font-size:15px}
+    .card p + p{margin-top:10px}
+    ul{margin:10px 0 0;padding-left: 18px}
+    .hl{color:var(--text);font-weight:600}
+    .note{
+      margin-top: 10px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(227,36,40,.28);
+      background: linear-gradient(180deg, rgba(227,36,40,.12), rgba(255,255,255,.03));
       color: var(--muted);
-      line-height:1.65;
-      font-size: 15px;
-    }
-    ul{margin:10px 0 0; padding-left: 18px}
-    .hl{
-      color: var(--text);
-      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.6;
     }
     .footer{
       margin-top: 18px;
       color: var(--muted);
       font-size: 13px;
-      text-align: center;
-      opacity: .9;
+      text-align:center;
+      opacity:.9;
     }
-    .badge{
-      display:inline-block;
-      padding: 2px 10px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      margin-left: 8px;
-      color: var(--muted);
-    }
+
     @media (min-width: 820px){
-      h1{font-size: 30px}
+      h1{font-size:32px}
       .grid{grid-template-columns: 1fr 1fr}
       .span2{grid-column: 1 / -1}
     }
@@ -132,91 +142,102 @@
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
+  <main class="wrap">
+    <section class="hero" aria-label="Nagłówek polityki prywatności">
       <div class="brand">
-        <div class="dot" aria-hidden="true"></div>
+        <div class="mark" aria-hidden="true"></div>
         <div>
           <h1>Polityka prywatności — Aplikacja PZŁS</h1>
           <p class="sub">
-            Dokument opisuje zasady przetwarzania informacji w aplikacji mobilnej Polskiego Związku Łyżwiarstwa Szybkiego (PZŁS).
-            <span class="badge">Aktualizacja: <strong>WSTAW_DATĘ</strong></span>
+            Dokument opisuje zasady przetwarzania informacji podczas korzystania z aplikacji mobilnej
+            Polskiego Związku Łyżwiarstwa Szybkiego (PZŁS).
           </p>
+          <div class="badge">Data obowiązywania: <strong>2026-01-27</strong></div>
         </div>
       </div>
 
-      <nav>
+      <nav class="nav" aria-label="Nawigacja po sekcjach">
         <a class="chip" href="#admin">Administrator</a>
-        <a class="chip" href="#dane">Jakie dane</a>
-        <a class="chip" href="#cel">Cel</a>
-        <a class="chip" href="#udostepnianie">Udostępnianie</a>
-        <a class="chip" href="#prawa">Twoje prawa</a>
-        <a class="chip" href="#kontakt">Kontakt</a>
+        <a class="chip" href="#collect">Jakie dane</a>
+        <a class="chip" href="#purpose">Cele</a>
+        <a class="chip" href="#providers">Dostawcy</a>
+        <a class="chip" href="#offline">Offline/cache</a>
+        <a class="chip" href="#rights">Prawa</a>
+        <a class="chip" href="#contact">Kontakt</a>
       </nav>
-    </header>
+    </section>
 
-    <div class="grid">
-      <section class="card span2" id="admin">
+    <section class="grid" aria-label="Treść polityki">
+      <article class="card span2" id="admin">
         <h2>1) Administrator</h2>
         <p>
-          Administratorem aplikacji jest <span class="hl">Polski Związek Łyżwiarstwa Szybkiego (PZŁS)</span>.
-          <br/>Kontakt w sprawach prywatności: <span class="hl">WSTAW_EMAIL</span>.
+          Administratorem danych jest <span class="hl">Polski Związek Łyżwiarstwa Szybkiego (PZŁS)</span>,
+          Al. Wojska Polskiego 17/2, 01-515 Warszawa. :contentReference[oaicite:1]{index=1}
         </p>
-      </section>
+        <p>
+          Kontakt w sprawach prywatności: <span class="hl">sekretariat@pzls.pl</span>, tel. +48 601 328 996. :contentReference[oaicite:2]{index=2}
+        </p>
+      </article>
 
-      <section class="card" id="dane">
+      <article class="card" id="collect">
         <h2>2) Jakie dane zbiera aplikacja</h2>
         <p>
           Aplikacja ma charakter informacyjny (wydarzenia, zawodnicy, rankingi) i <span class="hl">nie wymaga zakładania konta</span>.
+          Użytkownik nie podaje w aplikacji danych osobowych.
         </p>
-        <ul>
-          <li><span class="hl">Dane podawane przez użytkownika:</span> aplikacja nie prosi o imię, nazwisko, e-mail ani numer telefonu (o ile nie wprowadzisz ich samodzielnie poza aplikacją).</li>
-          <li><span class="hl">Dane przechowywane lokalnie:</span> aplikacja może zapisywać pobrane treści na urządzeniu, aby działać offline (cache).</li>
-          <li><span class="hl">Dane techniczne:</span> przy standardowej komunikacji z serwerem mogą pojawić się logi techniczne po stronie dostawców (np. adres IP, typ urządzenia) — typowe dla usług internetowych.</li>
-        </ul>
-      </section>
+        <div class="note">
+          Aplikacja może przetwarzać standardowe dane techniczne wymagane do komunikacji z serwerem (np. adres IP w logach infrastruktury),
+          typowe dla usług internetowych.
+        </div>
+      </article>
 
-      <section class="card" id="cel">
-        <h2>3) Cel i podstawa</h2>
+      <article class="card" id="purpose">
+        <h2>3) Cele przetwarzania</h2>
         <ul>
           <li>Wyświetlanie treści sportowych: kalendarz wydarzeń, lista zawodników, rankingi.</li>
-          <li>Zapewnienie działania offline poprzez lokalne przechowywanie wcześniej pobranych treści.</li>
-          <li>Utrzymanie bezpieczeństwa i poprawnego działania usług (obsługa zapytań, ochrona przed nadużyciami).</li>
+          <li>Zapewnienie stabilności działania aplikacji i usług (obsługa zapytań, bezpieczeństwo, ochrona przed nadużyciami).</li>
         </ul>
-      </section>
+      </article>
 
-      <section class="card span2" id="udostepnianie">
-        <h2>4) Dostawcy usług i udostępnianie</h2>
+      <article class="card span2" id="providers">
+        <h2>4) Dostawcy usług</h2>
         <p>
-          Aplikacja korzysta z usług infrastrukturalnych do dostarczania treści (np. hosting danych / baza danych).
-          Jeśli używacie usług Google Firebase do przechowywania lub dostarczania treści, dane techniczne mogą być przetwarzane przez Google jako podmiot przetwarzający.
+          Aplikacja korzysta z usług infrastrukturalnych do przechowywania i dostarczania treści (np. baza danych).
+          Dane są przetwarzane wyłącznie w zakresie niezbędnym do działania aplikacji.
         </p>
         <p>
-          PZŁS nie sprzedaje danych użytkowników. Dane są udostępniane wyłącznie w zakresie niezbędnym do działania aplikacji i usług.
+          PZŁS nie sprzedaje danych użytkowników.
         </p>
-      </section>
+      </article>
 
-      <section class="card" id="prawa">
-        <h2>5) Twoje prawa</h2>
+      <article class="card" id="offline">
+        <h2>5) Działanie offline (cache)</h2>
+        <p>
+          Aby aplikacja działała szybciej i/lub offline, może zapisywać część wcześniej pobranych treści
+          lokalnie na urządzeniu (pamięć aplikacji). Użytkownik może usunąć dane aplikacji w ustawieniach systemu.
+        </p>
+      </article>
+
+      <article class="card" id="rights">
+        <h2>6) Twoje prawa</h2>
         <ul>
-          <li>Masz prawo uzyskać informacje o przetwarzaniu danych.</li>
-          <li>Jeśli przetwarzane są dane osobowe — masz prawo żądać dostępu, sprostowania, usunięcia lub ograniczenia (zgodnie z RODO).</li>
-          <li>W sprawach prywatności skontaktuj się z PZŁS (patrz: Kontakt).</li>
+          <li>Masz prawo do informacji o przetwarzaniu danych.</li>
+          <li>Jeśli w konkretnym przypadku przetwarzane byłyby dane osobowe — przysługuje Ci prawo dostępu, sprostowania, usunięcia lub ograniczenia (zgodnie z RODO).</li>
         </ul>
-      </section>
+      </article>
 
-      <section class="card" id="kontakt">
-        <h2>6) Kontakt</h2>
+      <article class="card span2" id="contact">
+        <h2>7) Kontakt</h2>
         <p>
-          Pytania dot. prywatności i działania aplikacji: <span class="hl">WSTAW_EMAIL</span>
-          <br/>Adres organizacji: <span class="hl">WSTAW_ADRES (opcjonalnie)</span>
+          Pytania dotyczące prywatności i działania aplikacji:
+          <span class="hl">sekretariat@pzls.pl</span> :contentReference[oaicite:3]{index=3}
         </p>
-      </section>
-    </div>
+      </article>
+    </section>
 
     <p class="footer">
       © PZŁS — Polityka prywatności aplikacji mobilnej. Dokument może być aktualizowany wraz ze zmianami funkcji aplikacji.
     </p>
-  </div>
+  </main>
 </body>
 </html>
