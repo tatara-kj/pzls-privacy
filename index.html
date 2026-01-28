@@ -115,6 +115,7 @@
     .card p + p{margin-top:10px}
     ul{margin:10px 0 0;padding-left: 18px}
     .hl{color:var(--text);font-weight:600}
+
     .note{
       margin-top: 10px;
       padding: 12px 12px;
@@ -125,6 +126,12 @@
       font-size: 14px;
       line-height: 1.6;
     }
+
+    .ok{
+      border: 1px solid rgba(191,130,36,.28);
+      background: linear-gradient(180deg, rgba(191,130,36,.12), rgba(255,255,255,.03));
+    }
+
     .footer{
       margin-top: 18px;
       color: var(--muted);
@@ -161,6 +168,7 @@
         <a class="chip" href="#collect">Jakie dane</a>
         <a class="chip" href="#purpose">Cele</a>
         <a class="chip" href="#providers">Dostawcy</a>
+        <a class="chip" href="#thirdparty">Treści zewnętrzne</a>
         <a class="chip" href="#offline">Offline/cache</a>
         <a class="chip" href="#rights">Prawa</a>
         <a class="chip" href="#contact">Kontakt</a>
@@ -172,10 +180,10 @@
         <h2>1) Administrator</h2>
         <p>
           Administratorem danych jest <span class="hl">Polski Związek Łyżwiarstwa Szybkiego (PZŁS)</span>,
-          Al. Wojska Polskiego 17/2, 01-515 Warszawa. :contentReference[oaicite:1]{index=1}
+          Al. Wojska Polskiego 17/2, 01-515 Warszawa.
         </p>
         <p>
-          Kontakt w sprawach prywatności: <span class="hl">sekretariat@pzls.pl</span>, tel. +48 601 328 996. :contentReference[oaicite:2]{index=2}
+          Kontakt w sprawach prywatności: <span class="hl">sekretariat@pzls.pl</span>, tel. <span class="hl">+48 601 328 996</span>.
         </p>
       </article>
 
@@ -185,9 +193,19 @@
           Aplikacja ma charakter informacyjny (wydarzenia, zawodnicy, rankingi) i <span class="hl">nie wymaga zakładania konta</span>.
           Użytkownik nie podaje w aplikacji danych osobowych.
         </p>
+        <ul>
+          <li><span class="hl">Dane podawane przez użytkownika:</span> aplikacja nie prosi o imię, nazwisko, e-mail ani numer telefonu.</li>
+          <li><span class="hl">Dane przechowywane lokalnie:</span> aplikacja może zapisywać pobrane treści na urządzeniu, aby działać offline (cache).</li>
+        </ul>
+
         <div class="note">
-          Aplikacja może przetwarzać standardowe dane techniczne wymagane do komunikacji z serwerem (np. adres IP w logach infrastruktury),
-          typowe dla usług internetowych.
+          Aplikacja może przetwarzać standardowe dane techniczne wymagane do komunikacji z serwerem
+          (np. adres IP w logach infrastruktury, identyfikatory zapytań), typowe dla usług internetowych.
+        </div>
+
+        <div class="note ok">
+          Aplikacja <span class="hl">nie</span> korzysta z narzędzi reklamowych ani śledzących (tracking) i
+          <span class="hl">nie</span> prowadzi profilowania użytkowników.
         </div>
       </article>
 
@@ -200,9 +218,9 @@
       </article>
 
       <article class="card span2" id="providers">
-        <h2>4) Dostawcy usług</h2>
+        <h2>4) Dostawcy usług (infrastruktura)</h2>
         <p>
-          Aplikacja korzysta z usług infrastrukturalnych do przechowywania i dostarczania treści (np. baza danych).
+          Aplikacja korzysta z usług infrastrukturalnych do przechowywania i dostarczania treści (np. baza danych, hosting).
           Dane są przetwarzane wyłącznie w zakresie niezbędnym do działania aplikacji.
         </p>
         <p>
@@ -210,34 +228,8 @@
         </p>
       </article>
 
-      <article class="card" id="offline">
-        <h2>5) Działanie offline (cache)</h2>
+      <article class="card span2" id="thirdparty">
+        <h2>5) Treści zewnętrzne (np. linki, wideo)</h2>
         <p>
-          Aby aplikacja działała szybciej i/lub offline, może zapisywać część wcześniej pobranych treści
-          lokalnie na urządzeniu (pamięć aplikacji). Użytkownik może usunąć dane aplikacji w ustawieniach systemu.
-        </p>
-      </article>
-
-      <article class="card" id="rights">
-        <h2>6) Twoje prawa</h2>
-        <ul>
-          <li>Masz prawo do informacji o przetwarzaniu danych.</li>
-          <li>Jeśli w konkretnym przypadku przetwarzane byłyby dane osobowe — przysługuje Ci prawo dostępu, sprostowania, usunięcia lub ograniczenia (zgodnie z RODO).</li>
-        </ul>
-      </article>
-
-      <article class="card span2" id="contact">
-        <h2>7) Kontakt</h2>
-        <p>
-          Pytania dotyczące prywatności i działania aplikacji:
-          <span class="hl">sekretariat@pzls.pl</span> :contentReference[oaicite:3]{index=3}
-        </p>
-      </article>
-    </section>
-
-    <p class="footer">
-      © PZŁS — Polityka prywatności aplikacji mobilnej. Dokument może być aktualizowany wraz ze zmianami funkcji aplikacji.
-    </p>
-  </main>
-</body>
-</html>
+          Aplikacja może otwierać zewnętrzne strony internetowe lub odtwarzać materiały wideo (np. w osadzonym widoku przeglądarki).
+          W takiej sytuacji dostawcy tych usług mogą przet
