@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PZŁS — prywatność zgłoszeń</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Prywatność zgłoszeń</h1>
+    <p>Za obsługę zgłoszeń z formularza odpowiada KODEMORA. Sprawy dotyczące formularza lub usunięcia zgłoszenia możesz przekazać w aplikacji PZŁS przez Ustawienia → „Zgłoś problem lub pomysł”.</p>
+    <h2>Co przekazuje formularz</h2>
+    <p>Formularz przekazuje rodzaj sprawy i opis. Adres e-mail do odpowiedzi oraz wersja aplikacji i nazwa ekranu są opcjonalne. Serwer używa również technicznych identyfikatorów instalacji i zgłoszenia, czasu oraz stanu dostarczenia, aby ograniczać nadużycia i unikać podwójnej wysyłki.</p>
+    <h2>Do czego służy Gmail</h2>
+    <p>Operator łączy własne konto Google. Zakresy <code>openid</code> i <code>email</code> służą do potwierdzenia tożsamości i adresu konta. Zakres <code>gmail.send</code> pozwala serwerowi wysłać zgłoszenie przez Gmail API do skrzynki obsługi. Podany w formularzu adres e-mail służy do odpowiedzi. Połączenie nie daje serwerowi dostępu do odczytu skrzynki.</p>
+    <p>Google otrzymuje dane potrzebne do uwierzytelnienia i dostarczenia wiadomości. Dane z tego połączenia służą potwierdzeniu konta operatora i obsłudze zgłoszeń. Nie są wykorzystywane do reklamy, profilowania, sprzedaży ani trenowania modeli.</p>
+    <h2>Jak długo przechowujemy dane</h2>
+    <ul>
+      <li>Korespondencję dotyczącą zgłoszenia operator usuwa 90 dni po zamknięciu sprawy. Operator nie tworzy osobnych kopii korespondencji.</li>
+      <li>Techniczny zapis formularza wygasa po 7 dniach, po czym usuwa go zadanie porządkowe serwera. Dane tymczasowe potrzebne do dostarczenia są usuwane po zakończeniu obsługi technicznej lub wygasają zgodnie z limitem serwera.</li>
+      <li>Dane dostępu do Gmaila są przechowywane prywatnie podczas działania połączenia. Po odłączeniu operator cofa dostęp w Google i usuwa dane dostępu. Dane te nie są częścią aplikacji mobilnej.</li>
+    </ul>
+    <nav aria-label="Pozostałe informacje">
+      <a href="contact.html">Jak wysłać zgłoszenie</a>
+      <a href="index.html">Polityka prywatności aplikacji PZŁS</a>
+    </nav>
+  </main>
+</body>
+</html>
